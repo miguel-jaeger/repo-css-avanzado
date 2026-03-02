@@ -19,14 +19,11 @@
 
   
   /*Menu*/
-  navbar {
+  #barra-navegacion {
       display: grid;
       grid-template-columns: 1fr;
       /* Una sola columna */
-      gap: 10px;
-      /* Espacio entre elementos */
-      background-color: #333;
-      padding: 10px;
+      background-color: #aaa6a6;     
       color: white;
   }
 
@@ -35,16 +32,31 @@
       /* Alinea el botón a la izquierda */
   }
 
-  #enlaces {
+  #menu {
       display: grid;
       grid-template-columns: repeat(3, auto);
       /* Enlaces en vertical */
-      gap: 10px;
+      
   }
 
-  #enlaces[hidden] {
+  #menu[hidden] {
       display: none;
   }
+
+  #menu a {
+      text-decoration: none;
+      color: white;
+      border-radius: 4px;
+      padding: 15px
+  }
+
+  #menu a:hover {
+      background-color: #da7272;      
+  }
+
+   #menu {
+       list-style-type: none;
+   }
 
   #btn-menu {
       display: none;
@@ -52,7 +64,7 @@
 
 
 
-  #enlaces:not([hidden]) {
+  #menu:not([hidden]) {
       display: grid;
   }
 
@@ -75,7 +87,7 @@
   /* Media query*/
   
   @media (max-width: 768px) {
-      .navbar {
+      #menu {
           grid-template-columns: repeat(3, 1fr);
           /* horizontal */
       }
@@ -91,15 +103,15 @@
           display: grid;
       }
 
-      #enlaces:not([hidden]) {
+      #menu:not([hidden]) {
           display: none;
       }
 
-      #enlaces[hidden] {
+      #menu[hidden] {
           display: grid;
       }
 
-      #enlaces {
+      #menu {
           grid-template-columns: 1fr;
           /* vertical */
           gap: 10px;
