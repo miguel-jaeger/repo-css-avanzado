@@ -8,20 +8,26 @@
     </head>
     <body>
         <div class="container">
-            <header>Encabezado del Portal</header>
-            <nav>
-                <button id="btn-menu" >&#9776;Menu</button>
-                <ul id="menu">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Acerca de</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Contacto</a></li>
-                ul>
-            </nav>
-            <main>Contenido Principal del Artículo</main>
-            <aside>Publicidad / Enlaces</aside>
-            <footer>Derechos Reservados 2024</footer>
-        </div>
+            <header>Encabezado del Portal
+                <nav>
+                    <button id="btn-menu"
+                        onclick="menu.hidden ^= 1">&#9776;Menu</button>
+                    <ul id="menu">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </header>
 
-    </body>
-</html>
+                <main>Contenido Principal del Artículo
+                    <!--Enlace al archivo-->
+                    <p><a href="archivos/archivo.pdf">Leer el artículo completo</a></p>
+                </main>
+                <aside>Publicidad / Enlaces</aside>
+                <footer>Derechos Reservados 2024</footer>
+            </div>
+
+        </body>
+    </html>
