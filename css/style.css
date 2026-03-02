@@ -1,0 +1,123 @@
+  :root {
+      font-size: 16px;
+  }
+
+  body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+  }
+
+  h1 {
+      font-size: 2.5rem;
+      text-align: center;
+  }
+
+  p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+  }
+
+  
+  /*Menu*/
+  #barra-navegacion {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* Una sola columna */
+      background-color: #aaa6a6;     
+      color: white;
+  }
+
+  #btn-menu {
+      justify-self: start;
+      /* Alinea el botón a la izquierda */
+  }
+
+  #menu {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      /* Enlaces en vertical */
+      
+  }
+
+  #menu[hidden] {
+      display: none;
+  }
+
+  #menu a {
+      text-decoration: none;
+      color: white;
+      border-radius: 4px;
+      padding: 15px
+  }
+
+  #menu a:hover {
+      background-color: #da7272;      
+  }
+
+   #menu {
+       list-style-type: none;
+   }
+
+  #btn-menu {
+      display: none;
+  }
+
+
+
+  #menu:not([hidden]) {
+      display: grid;
+  }
+
+/*-----------------------------*/
+
+
+  /*Galeria*/
+  .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+  }
+
+  .gallery img {
+      width: 100%;
+      border-radius: 8px;
+  }
+
+
+  /* Media query*/
+  
+  @media (max-width: 768px) {
+      #menu {
+          grid-template-columns: repeat(3, 1fr);
+          /* horizontal */
+      }
+
+      #btn-menu {
+          display: none;
+      }
+  }
+
+  @media (width<768px) {
+
+      #btn-menu {
+          display: grid;
+      }
+
+      #menu:not([hidden]) {
+          display: none;
+      }
+
+      #menu[hidden] {
+          display: grid;
+      }
+
+      #menu {
+          grid-template-columns: 1fr;
+          /* vertical */
+          gap: 10px;
+      }
+
+
+
+
+  }
