@@ -16,3 +16,44 @@
       font-size: 1.1rem;
       line-height: 1.5;
   }
+
+  
+  /*Menu*/
+  navbar {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* Una sola columna */
+      gap: 10px;
+      /* Espacio entre elementos */
+      background-color: #333;
+      padding: 10px;
+      color: white;
+  }
+
+  #btn-menu {
+      justify-self: start;
+      /* Alinea el botón a la izquierda */
+  }
+
+  #enlaces {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      /* Enlaces en vertical */
+      gap: 10px;
+  }
+
+  #enlaces[hidden] {
+      display: none;
+  }
+
+  #btn-menu {
+      display: none;
+  }
+
+
+
+  #enlaces:not([hidden]) {
+      display: grid;
+  }
+
+/*-----------------------------*/
