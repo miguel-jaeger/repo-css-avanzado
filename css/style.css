@@ -1,123 +1,68 @@
-  :root {
-      font-size: 16px;
-  }
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    /* Tres columnas */
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header header"
+        "nav main aside"
+        "footer footer footer";
+    min-height: 100vh;
+}
 
-  body {
-      font-family: 'Segoe UI', sans-serif;
-      padding: 2rem;
-  }
+header {
+    grid-area: header;
+    background: #333;
+    color: white;
+    padding: 20px;
+}
 
-  h1 {
-      font-size: 2.5rem;
-      text-align: center;
-  }
+nav {
+    grid-area: nav;
+    background: #f4f4f4;
+}
 
-  p {
-      font-size: 1.1rem;
-      line-height: 1.5;
-  }
+nav {
+    display: flex;
+    justify-content: space-around;
+    /* Distribución equitativa */
+    align-items: center;
+    list-style: none;
+    background-color: #444;
+}
 
-  
-  /*Menu*/
-  #barra-navegacion {
-      display: grid;
-      grid-template-columns: 1fr;
-      /* Una sola columna */
-      background-color: #aaa6a6;     
-      color: white;
-  }
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
 
-  #btn-menu {
-      justify-self: start;
-      /* Alinea el botón a la izquierda */
-  }
+main {
+    grid-area: main;
+    padding: 20px;
+}
 
-  #menu {
-      display: grid;
-      grid-template-columns: repeat(3, auto);
-      /* Enlaces en vertical */
-      
-  }
+aside {
+    grid-area: aside;
+    background: #eee;
+}
 
-  #menu[hidden] {
-      display: none;
-  }
+footer {
+    grid-area: footer;
+    background: #333;
+    color: white;
+    text-align: center;
+}
 
-  #menu a {
-      text-decoration: none;
-      color: white;
-      border-radius: 4px;
-      padding: 15px
-  }
+/* Selecciona enlaces que terminen exactamente en .pdf */
+a[href$=".pdf"] {
+    color: red;
+    font-weight: bold;
+    padding-left: 20px;
+    background: url('icon-pdf.png') no-repeat left;
+}
 
-  #menu a:hover {
-      background-color: #da7272;      
-  }
-
-   #menu {
-       list-style-type: none;
-   }
-
-  #btn-menu {
-      display: none;
-  }
-
-
-
-  #menu:not([hidden]) {
-      display: grid;
-  }
-
-/*-----------------------------*/
-
-
-  /*Galeria*/
-  .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-  }
-
-  .gallery img {
-      width: 100%;
-      border-radius: 8px;
-  }
-
-
-  /* Media query*/
-  
-  @media (max-width: 768px) {
-      #menu {
-          grid-template-columns: repeat(3, 1fr);
-          /* horizontal */
-      }
-
-      #btn-menu {
-          display: none;
-      }
-  }
-
-  @media (width<768px) {
-
-      #btn-menu {
-          display: grid;
-      }
-
-      #menu:not([hidden]) {
-          display: none;
-      }
-
-      #menu[hidden] {
-          display: grid;
-      }
-
-      #menu {
-          grid-template-columns: 1fr;
-          /* vertical */
-          gap: 10px;
-      }
-
-
-
-
-  }
+/* Selecciona enlaces que contengan la palabra "seguro" en cualquier parte */
+a[href*="seguro"] {
+    border-bottom: 2px solid green;
+}
