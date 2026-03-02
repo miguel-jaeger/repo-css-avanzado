@@ -70,3 +70,42 @@
       width: 100%;
       border-radius: 8px;
   }
+
+
+  /* Media query*/
+  
+  @media (max-width: 768px) {
+      .navbar {
+          grid-template-columns: repeat(3, 1fr);
+          /* horizontal */
+      }
+
+      #btn-menu {
+          display: none;
+      }
+  }
+
+  @media (width<768px) {
+
+      #btn-menu {
+          display: grid;
+      }
+
+      #enlaces:not([hidden]) {
+          display: none;
+      }
+
+      #enlaces[hidden] {
+          display: grid;
+      }
+
+      #enlaces {
+          grid-template-columns: 1fr;
+          /* vertical */
+          gap: 10px;
+      }
+
+
+
+
+  }
